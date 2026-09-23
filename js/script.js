@@ -30,7 +30,21 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ------------------------------------------------------------------
-     3. SCROLL REVEAL ANIMATIONS
+     3. HERO PHOTO SLIDESHOW
+  ------------------------------------------------------------------ */
+  var heroSlideshow = document.querySelector('[data-hero-slideshow]');
+  if (heroSlideshow) {
+    var heroPhotos = heroSlideshow.querySelectorAll('.hero-photo');
+    var heroPhotoIndex = 0;
+    window.setInterval(function () {
+      heroPhotos[heroPhotoIndex].classList.remove('is-active');
+      heroPhotoIndex = (heroPhotoIndex + 1) % heroPhotos.length;
+      heroPhotos[heroPhotoIndex].classList.add('is-active');
+    }, 5000);
+  }
+
+  /* ------------------------------------------------------------------
+     4. SCROLL REVEAL ANIMATIONS
      Respects prefers-reduced-motion via CSS (transitions disabled there).
   ------------------------------------------------------------------ */
   var revealTargets = document.querySelectorAll('.reveal, .reveal-stagger');
@@ -116,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (overlay && galleryItems.length) {
     var lightboxIcon = overlay.querySelector('.display-icon');
+    var lightboxImage = overlay.querySelector('.display-image');
     var lightboxTitle = overlay.querySelector('.lightbox-title');
     var lightboxDesc = overlay.querySelector('.lightbox-desc');
     var lightboxClose = overlay.querySelector('.lightbox-close');
@@ -125,8 +140,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var iconClass = item.getAttribute('data-icon') || 'bi-image';
         var title = item.getAttribute('data-title') || 'Gallery Image';
         var desc = item.getAttribute('data-desc') || 'Sample gallery placeholder.';
+        var image = item.getAttribute('data-image');
 
         lightboxIcon.className = 'bi ' + iconClass + ' display-icon';
+        lightboxIcon.style.display = image ? 'none' : '';
+        if (lightboxImage) {
+          lightboxImage.src = image || '';
+          lightboxImage.alt = title;
+          lightboxImage.style.display = image ? 'block' : 'none';
+        }
         lightboxTitle.textContent = title;
         lightboxDesc.textContent = desc;
 
