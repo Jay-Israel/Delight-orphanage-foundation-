@@ -340,7 +340,7 @@ select:focus-visible,
 
 .hero-photo-slideshow {
   position: relative;
-  width: min(48vw, 620px);
+  width: min(48vw, 720px);
   height: clamp(300px, 40vw, 470px);
   margin-left: auto;
   overflow: hidden;
@@ -356,7 +356,7 @@ select:focus-visible,
   z-index: 2;
   pointer-events: none;
   background: linear-gradient(90deg, var(--blue-primary) 0%, transparent 12%, transparent 88%, var(--blue-secondary) 100%);
-  filter: blur(8px);
+  filter: blur(1px);
 }
 
 .hero-photo {
