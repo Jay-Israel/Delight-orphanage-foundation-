@@ -1104,4 +1104,78 @@ hr.divider-gold {
 @media (max-width: 575.98px) {
   .section-pad { padding: 3.5rem 0; }
   .form-card { padding: 1.75rem 1.25rem; }
+
+  .impact-section {
+    background: linear-gradient(180deg, #f4f8ff 0%, #edf6ff 100%);
+    padding: 2.5rem 0;
+  }
+
+  .impact-item {
+    background: linear-gradient(135deg, #ffffff 0%, #f4f7ff 100%);
+    border: 1px solid rgba(12, 86, 199, 0.08);
+    border-radius: 22px;
+    box-shadow: 0 12px 30px rgba(8, 42, 104, 0.08);
+    padding: 1.3rem 0.8rem;
+    min-height: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .impact-item:nth-child(1) {
+    background: linear-gradient(135deg, #edf6ff 0%, #dfeeff 100%);
+  }
+  .impact-item:nth-child(2) {
+    background: linear-gradient(135deg, #fff7eb 0%, #ffe7bf 100%);
+  }
+  .impact-item:nth-child(3) {
+    background: linear-gradient(135deg, #eefcf5 0%, #dff7ea 100%);
+  }
+  .impact-item:nth-child(4) {
+    background: linear-gradient(135deg, #f5f1ff 0%, #e7defd 100%);
+  }
+
+  .impact-item i {
+    width: 62px;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    color: var(--white);
+    background: linear-gradient(135deg, var(--blue-secondary), var(--gold));
+    border-radius: 18px;
+    margin-bottom: 0.85rem;
+    box-shadow: 0 12px 22px rgba(12, 86, 199, 0.18);
+  }
+
+  .impact-item:nth-child(2) i {
+    background: linear-gradient(135deg, #f29f05, #ffbf47);
+  }
+  .impact-item:nth-child(3) i {
+    background: linear-gradient(135deg, #2bb673, #74d7a0);
+  }
+  .impact-item:nth-child(4) i {
+    background: linear-gradient(135deg, #7d5cf5, #b8a6ff);
+  }
+
+  .impact-item h4 {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    color: var(--blue-primary);
+    margin-bottom: 0.25rem;
+  }
+
+  .impact-item p {
+    color: rgba(19, 33, 59, 0.75);
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .impact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(8, 42, 104, 0.12);
+  }
 }
